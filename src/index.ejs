@@ -1,9 +1,37 @@
 <% include _header %>
 
+<style>
+  .slider li:nth-child(1) {
+    background-image: url('./images/slide/bg_top001.jpg');
+  }
+
+  .slider li:nth-child(2) {
+    background-image: url('./images/slide/bg_top002.jpg');
+  }
+
+  .slider li:nth-child(3) {
+    background-image: url('./images/slide/bg_top003.jpg');
+  }
+
+  @media screen and (min-width: 768px) {
+    .slider li:nth-child(1) {
+      background-image: url('./images/slide/bg_top001_sm.jpg');
+    }
+
+    .slider li:nth-child(2) {
+      background-image: url('./images/slide/bg_top002_sm.jpg');
+    }
+
+    .slider li:nth-child(3) {
+      background-image: url('./images/slide/bg_top003_sm.jpg');
+    }
+  }
+</style>
+
 <ul class="slider">
-  <li style="background-image: url('./images/slide/bg_top001.jpg')"><a href="about.html"></a></li>
-  <li style="background-image: url('./images/slide/bg_top002.jpg')"><a href="about.html"></a></li>
-  <li style="background-image: url('./images/slide/bg_top003.jpg')"><a href="about.html"></a></li>
+  <li><a href="about.html"></a></li>
+  <li><a href="#"></a></li>
+  <li><a href="scene.html"></a></li>
 </ul>
 
 <% include _footer %>
