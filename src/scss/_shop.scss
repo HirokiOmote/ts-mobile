@@ -1,0 +1,50 @@
+.shop {
+  @include container( 960px );
+  padding: 70px 10px;
+  text-align: center;
+
+  h1 {
+    padding-bottom: 21px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #4d4d4d;
+
+    @include media( sm ) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    @include media( sm ) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  li {
+    padding: .75em 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 18px;
+
+    @include media( sm ) {
+      width: calc( 100% / 3 );
+    }
+
+    @include media( md ) {
+      width: 25%;
+    }
+
+    span, a {
+      font-size: 1.1rem;
+    }
+
+    span {
+      display: block;
+      font-weight: 300;
+    }
+
+    a {
+      color: #0000ff;
+    }
+  }
+}

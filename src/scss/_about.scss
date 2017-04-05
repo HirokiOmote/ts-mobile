@@ -1,0 +1,110 @@
+.about {
+  @include container( 840px );
+  padding: 70px 10px;
+
+  @include media( md ) {
+    padding: 80px 20px;
+  }
+
+  @include media( md ) {
+    padding: 93px 0;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    margin-top: 2.8em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2.1;
+    text-align: justify;
+
+    @include media( sm ) {
+      margin-top: 2.0em;
+      font-size: 1.55rem;
+    }
+
+    @include media( md ) {
+      font-size: 1.7rem;
+    }
+  }
+
+  p + p {
+    text-align: center;
+  }
+}
+
+.aboutOutline {
+  margin-top: 87px;
+  padding: 0 14px;
+  font-size: 1.3rem;
+  text-align: center;
+
+  @include media( sm ) {
+    margin-top: 104px;
+  }
+
+  @include media( md ) {
+    margin-top: 131px;
+  }
+
+  .container {
+    margin-top: 1.25em;
+    padding: .6em 0;
+    border: {
+      top: 1px dotted #000;
+      bottom: 1px dotted #000;
+    }
+
+    @include media( sm ) {
+      margin-top: 1.5em;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  dl {
+    @include media( sm ) {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      text-align: left;
+    }
+  }
+
+  dt, dd {
+    padding: .65em 0;
+  }
+
+  dt {
+    font-weight: 600;
+    @include media( sm ) {
+      width: 6em;
+    }
+  }
+
+  dd {
+    position: relative;
+
+    @include media( sm ) {
+      width: calc( 100% - 9em );
+      padding-left: 3em;
+    }
+
+    span {
+      margin-top: .65em;
+      display: block;
+      @include media( sm ) {
+        display: inline-block;
+        position: absolute;
+        left: 15em;
+        top: .2em;
+        width: 73px;
+        margin-top: 0;
+      }
+    }
+  }
+}

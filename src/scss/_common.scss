@@ -1,0 +1,159 @@
+html {
+  color: #323232;
+  font: {
+    size: 62.5%;
+    family: 'Sorts Mill Goudy', "游明朝", YuMincho, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", sans-serif;
+  }
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt" 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: #4a4a4a;
+  font-size: 1.0rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.globalHeader {
+  @include media( md ) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 120px;
+    padding: 15px 15px 30px;
+    background: url("./images/common/bg_header.svg");
+  }
+
+  p {
+    display: none;
+    @include media( md ) {
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin-right: .7em;
+      }
+    }
+  }
+}
+
+.globalNavigation {
+	display: none;
+
+  @include media( md ) {
+    display: block;
+  }
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background-color: rgba( #000, 0.7);
+
+    @include media( md ) {
+      flex-direction: row;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+
+      li {
+        margin: 0 15px;
+      }
+    }
+	}
+
+	a {
+		display: block;
+		padding: 1em 0;
+		color: $white;
+		font-size: 1.7rem;
+
+    @include media( md ) {
+      padding: 0;
+      color: #000;
+      font-size: 1.3rem;
+    }
+	}
+}
+
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.menu-trigger {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 38px;
+	height: 28px;
+	z-index: 1000;
+
+  @include media( md ) {
+    display: none;
+  }
+
+  span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #333;
+		border-radius: 2px;
+	}
+
+	&.active {
+		span {
+			background-color: $white;
+		}
+	}
+}
+.menu-trigger span:nth-of-type(1) {
+	top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+	top: calc( 50% - 1px );
+}
+.menu-trigger span:nth-of-type(3) {
+	bottom: 0;
+}
+.menu-trigger.active span:nth-of-type(1) {
+	-webkit-transform: translateY(13px) rotate(-315deg);
+	transform: translateY(13px) rotate(-315deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+	opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+	-webkit-transform: translateY(-13px) rotate(315deg);
+	transform: translateY(-13px) rotate(315deg);
+}

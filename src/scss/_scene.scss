@@ -1,0 +1,45 @@
+.scene {
+  @include container( 920px );
+  padding: 70px 25px;
+  text-align: center;
+
+  @include media( sm ) {
+    padding: 70px 20px;
+  }
+
+  @include media( sm ) {
+    padding: 70px 0;
+  }
+
+  h1 {
+    @include media( sm ) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    margin-top: 27px;
+    @include media( sm ) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -30px;
+    }
+  }
+
+  li {
+    margin-bottom: 35px;
+
+    @include media( sm ) {
+      margin: 30px;
+      width: calc( 100% / 3 - 60px );
+    }
+  }
+
+  figcaption {
+    margin-top: .85em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+  }
+}

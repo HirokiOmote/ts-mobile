@@ -1,0 +1,64 @@
+.advertising {
+  @include container( 920px );
+  padding: 70px 10px;
+  text-align: center;
+
+  @include media( sm ) {
+    padding: 70px 20px;
+  }
+
+  @include media( sm ) {
+    padding: 70px 0;
+  }
+
+  h1 {
+    @include media( sm ) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 21px 0;
+
+    @include media( sm ) {
+      margin: 40px -30px;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  li {
+    margin-bottom: 3.5em;
+    width: 270px;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    @include media( sm ) {
+      width: calc( 100% / 3 - 60px );
+      margin: {
+        left: 30px;
+        right: 30px;
+      };
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1.3em;
+      text-align: left;
+
+      &::before {
+        margin-right: .6em;
+        content: url("./images/advertising/img_iconList.svg");
+      }
+    }
+  }
+}
