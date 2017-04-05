@@ -1,4 +1,4 @@
-.advertising {
+.media {
   @include container( 920px );
   padding: 70px 10px;
   text-align: center;
@@ -57,7 +57,7 @@
 
       &::before {
         margin-right: .6em;
-        content: url("./images/advertising/img_iconList.svg");
+        content: url("./images/media/img_iconList.svg");
       }
     }
   }
