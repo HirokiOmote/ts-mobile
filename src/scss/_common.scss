@@ -28,6 +28,10 @@ body {
 a {
 	color: inherit;
 	text-decoration: inherit;
+  transition: all .3s ease;
+  &:hover {
+    opacity: .5;
+  }
 }
 
 img {
@@ -47,7 +51,7 @@ img {
     width: 100vw;
     height: 120px;
     padding: 15px 15px 30px;
-    background: url("./images/common/bg_header.svg");
+    background: rgba( #fff, .8 ) url("./images/common/bg_header.svg");
   }
 
   p {
