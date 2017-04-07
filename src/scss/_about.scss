@@ -1,13 +1,13 @@
 .about {
   @include container( 840px );
-  padding: 70px 10px;
+  padding: 70px 20px;
 
   @include media( md ) {
     padding: 80px 20px;
   }
 
   @include media( md ) {
-    padding: 93px 0;
+    padding: 93px 0 213px;
   }
 
   h1 {

@@ -20,15 +20,17 @@ function btnMenu() {
 
   $(btn).on('click', (event) => {
     event.preventDefault();
-    $(btn).toggleClass('active');
-    $(menu).toggle(400).toggleClass('active');
 
     if(state == false) {
       state = true;
       scrollpos = $(window).scrollTop();
+      $(btn).addClass('active');
+      $(menu).show(400).addClass('active');
       $('body').toggleClass('no-scroll').css({'top': -scrollpos});
     } else {
       state = false;
+      $(btn).removeClass('active');
+      $(menu).hide(400).removeClass('active');
       $('body').removeClass('no-scroll').css({'top': 0});
       window.scrollTo(0, scrollpos);
     }
@@ -42,9 +44,14 @@ function btnMenu() {
 
         if ( winWidth != winWidth_resized ) {
           $(btn).removeClass('active');
+          $(menu).removeClass('active');
           $('body').removeClass('no-scroll').css({'top': 0});
-          $(menu).hide(400).removeClass('active');
           state = false;
+        }
+        if( winWidth_resized < 1024 ) {
+          $(menu).hide(400);
+        } else {
+          $(menu).show(400);
         }
       }, 200);
     });

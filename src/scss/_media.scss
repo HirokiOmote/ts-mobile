@@ -7,8 +7,8 @@
     padding: 70px 20px;
   }
 
-  @include media( sm ) {
-    padding: 70px 0;
+  @include media( md ) {
+    padding: 70px 0 160px;
   }
 
   h1 {
@@ -24,9 +24,13 @@
     margin: 21px 0;
 
     @include media( sm ) {
-      margin: 40px -30px;
+      margin: 40px -15px;
       flex-wrap: wrap;
       flex-direction: row;
+    }
+
+    @include media( md ) {
+      margin: 40px -30px;
     }
   }
 
@@ -37,7 +41,15 @@
     font-weight: 600;
 
     @include media( sm ) {
-      width: calc( 100% / 3 - 60px );
+      width: calc( 100% / 3 - 30.01px );
+      margin: {
+        left: 15px;
+        right: 15px;
+      };
+    }
+
+    @include media( md ) {
+      width: calc( 100% / 3 - 60.01px );
       margin: {
         left: 30px;
         right: 30px;
@@ -50,6 +62,10 @@
 
     figure {
       text-align: center;
+
+      img {
+        width: 100%;
+      }
     }
 
     figcaption {

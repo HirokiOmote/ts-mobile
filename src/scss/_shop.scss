@@ -3,6 +3,10 @@
   padding: 70px 10px;
   text-align: center;
 
+  @include media( md ) {
+    padding: 70px 0 190px;
+  }
+
   h1 {
     padding-bottom: 21px;
     margin-bottom: 13px;
