@@ -1,58 +1,48 @@
 import lightcase from 'lightcase';
+import fatNav from './jquery.fatNav';
 
 $(() => {
-  btnMenu();
   $(window).load(() => {
     modal();
+    menu();
   });
 });
 
-function btnMenu() {
-  const btn = '.menu-trigger';
-  const menu = '.globalNavigation';
-  const winWidth = $(window).width();
+function menu() {
+  $.fatNav();
+
+  const menu = '.fat-nav';
+  const btn = '.hamburger';
   let state = false;
-  let timer = false;
-  let scrollpos;
-  let winWidth_resized;
+  let currentWidth = window.innerWidth;
 
-  $(btn).on('click', (event) => {
-    event.preventDefault();
-
-    if(state == false) {
+  $(btn).on('click', () => {
+    if (!state) {
+      $(window).on('touchmove.noScroll', (e) => {
+        e.preventDefault();
+      });
       state = true;
-      scrollpos = $(window).scrollTop();
-      $(btn).addClass('active');
-      $(menu).show(400).addClass('active');
-      $('body').toggleClass('no-scroll').css({'top': -scrollpos});
     } else {
+      $(window).off('.noScroll');
       state = false;
-      $(btn).removeClass('active');
-      $(menu).hide(400).removeClass('active');
-      $('body').removeClass('no-scroll').css({'top': 0});
-      window.scrollTo(0, scrollpos);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (currentWidth == window.innerWidth) {
+      return;
+    }
+    if(currentWidth <= 1200) {
+      $(menu).hide();
+    } else {
+      $(menu).show();
     }
 
-    $(window).resize(() => {
-      if (timer !== false) {
-        clearTimeout(timer);
-      }
-      timer = setTimeout(() => {
-        winWidth_resized = $(window).width();
-        if ( winWidth != winWidth_resized && winWidth_resized <=1140 ) {
-          console.log("モバイル");
-          $(menu).hide(400);
-          $(btn).removeClass('active');
-          $(menu).removeClass('active');
-          $('body').removeClass('no-scroll').css({'top': 0});
-        } else if( winWidth_resized > 1140 ) {
-          $(menu).show(400);
-        } else {
-          $('body').removeClass('no-scroll').css({'top': 0});
-          state = false;
-        }
-      }, 200);
-    });
+    currentWidth = window.innerWidth;
+    state = false;
+    $(menu).removeClass('active');
+    $(btn).removeClass('active');
+    $(window).off('.noScroll');
   });
 }
 
