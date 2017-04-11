@@ -2,12 +2,25 @@
   @include container( 840px );
   padding: 70px 20px;
 
-  @include media( md ) {
-    padding: 80px 20px;
+  @include media( sm ) {
+    padding: 0 20px;
   }
 
   @include media( md ) {
-    padding: 93px 0 213px;
+    padding: 0;
+  }
+}
+
+.aboutIntro {
+  @include media( sm ) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  @include media( lg ) {
+    height: calc( 100vh - 90px );
   }
 
   h1 {
@@ -43,11 +56,11 @@
   text-align: center;
 
   @include media( sm ) {
-    margin-top: 104px;
+    margin-bottom: 87px;
   }
 
   @include media( md ) {
-    margin-top: 131px;
+    margin: 131px 0 221px;
   }
 
   .container {
@@ -100,7 +113,7 @@
       @include media( sm ) {
         display: inline-block;
         position: absolute;
-        left: 15em;
+        left: 15.7em;
         top: .2em;
         width: 73px;
         margin-top: 0;

@@ -1,10 +1,8 @@
-import slick from 'slick-carousel';
 import lightcase from 'lightcase';
 
 $(() => {
+  btnMenu();
   $(window).load(() => {
-    btnMenu();
-    slider();
     modal();
   });
 });
@@ -41,30 +39,20 @@ function btnMenu() {
       }
       timer = setTimeout(() => {
         winWidth_resized = $(window).width();
-
-        if ( winWidth != winWidth_resized ) {
+        if ( winWidth != winWidth_resized && winWidth_resized <=1140 ) {
+          console.log("モバイル");
+          $(menu).hide(400);
           $(btn).removeClass('active');
           $(menu).removeClass('active');
           $('body').removeClass('no-scroll').css({'top': 0});
-          state = false;
-        }
-        if( winWidth_resized < 1024 ) {
-          $(menu).hide(400);
-        } else {
+        } else if( winWidth_resized > 1140 ) {
           $(menu).show(400);
+        } else {
+          $('body').removeClass('no-scroll').css({'top': 0});
+          state = false;
         }
       }, 200);
     });
-  });
-}
-
-function slider() {
-  $('.slider').slick({
-    autoplay: true,
-    fade: true,
-    slidesToShow: 1,
-    dots: false,
-    arrows: false
   });
 }
 

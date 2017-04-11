@@ -2,7 +2,7 @@ html {
   color: #323232;
   font: {
     size: 62.5%;
-    family: 'Sorts Mill Goudy', "游明朝", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+    family: "Lora", "游明朝", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGS明朝E", "Meiryo", "メイリオ", serif;
   }
   line-height: 1;
   letter-spacing: 0.02em;
@@ -29,6 +29,7 @@ a {
 	color: inherit;
 	text-decoration: inherit;
   transition: all .3s ease;
+
   &:hover {
     opacity: .5;
   }
@@ -40,7 +41,7 @@ img {
 }
 
 .globalHeader {
-  @include media( md ) {
+  @include media( lg ) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,20 +50,16 @@ img {
     bottom: 0;
     z-index: 1000;
     width: 100vw;
-    height: 120px;
-    padding: 15px 15px 30px;
+    height: 90px;
+    padding: 20px;
     background: rgba( #fff, .8 ) url("./images/common/bg_header.svg");
   }
 
   p {
     display: none;
-    @include media( md ) {
-      display: flex;
-      justify-content: center;
-
-      img {
-        margin-right: .7em;
-      }
+    @include media( lg ) {
+      display: block;
+      text-align: center;
     }
   }
 }
@@ -73,10 +70,10 @@ img {
   z-index: 2;
 
   &.active {
-    z-index: 50;
+    z-index: 500;
   }
 
-  @include media( md ) {
+  @include media( lg ) {
     display: block;
   }
 
@@ -90,10 +87,10 @@ img {
 		position: fixed;
 		left: 0;
 		top: 0;
-		z-index: 100;
+		z-index: 500;
 		background-color: rgba( #000, 0.7);
 
-    @include media( md ) {
+    @include media( lg ) {
       flex-direction: row;
       position: static;
       width: auto;
@@ -112,7 +109,7 @@ img {
 		color: $white;
 		font-size: 1.7rem;
 
-    @include media( md ) {
+    @include media( lg ) {
       padding: 0;
       color: #000;
       font-size: 1.3rem;
@@ -131,11 +128,12 @@ img {
 	position: fixed;
 	top: 15px;
 	right: 15px;
+  padding: 10px;
 	width: 38px;
 	height: 28px;
 	z-index: 1000;
 
-  @include media( md ) {
+  @include media( lg ) {
     display: none;
   }
 
@@ -153,6 +151,10 @@ img {
 			background-color: $white;
 		}
 	}
+
+  &:hover {
+    opacity: 1.0;
+  }
 }
 .menu-trigger span:nth-of-type(1) {
 	top: 0;
@@ -173,4 +175,60 @@ img {
 .menu-trigger.active span:nth-of-type(3) {
 	-webkit-transform: translateY(-13px) rotate(315deg);
 	transform: translateY(-13px) rotate(315deg);
+}
+
+main .pagination {
+  font-size: 1.3rem;
+
+  @include media( sm ) {
+    font-size: 1.5rem;
+  }
+
+  @include media( md ) {
+    font-size: 1.8rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    margin: 0 .6em;
+    color: $mainColor;
+    border-radius: 100%;
+    border: 1px solid #666;
+
+    &.active {
+      color: #fff;
+      background-color: $mainColor;
+    }
+
+    &.prev,
+    &.next {
+      background-color: transparent;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      transition: all .2s linear;
+
+      &:hover {
+        color: #fff;
+        background-color: $mainColor;
+      }
+    }
+  }
 }
