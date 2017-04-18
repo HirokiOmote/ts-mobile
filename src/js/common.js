@@ -2,10 +2,8 @@ import lightcase from 'lightcase';
 import fatNav from './jquery.fatNav';
 
 $(() => {
-  $(window).load(() => {
-    modal();
-    menu();
-  });
+  modal();
+  menu();
 });
 
 function menu() {
@@ -32,7 +30,7 @@ function menu() {
     if (currentWidth == window.innerWidth) {
       return;
     }
-    if(currentWidth <= 1200) {
+    if(currentWidth !== window.innerWidth && currentWidth <= 1200) {
       $(menu).hide();
     } else {
       $(menu).show();

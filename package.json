@@ -23,12 +23,13 @@
     "gulp-uglify": "^1.4.2",
     "gulp-watch": "^4.3.9",
     "jquery": "^2.2.4",
-    "lightcase": "^2.3.6",
+    "lightcase": "^2.4.0",
     "picturefill": "^3.0.2",
     "reset-css": "^2.2.0",
     "run-sequence": "^1.2.2",
     "sass-module-importer": "^1.4.0",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "webpack": "^1.12.14",
   },
   "babel": {
     "presets": [
@@ -53,7 +54,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.8.2",
-    "webpack": "^1.12.14",
     "webpack-stream": "^3.1.0"
   }
 }
