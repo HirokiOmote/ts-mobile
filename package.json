@@ -29,7 +29,7 @@
     "run-sequence": "^1.2.2",
     "sass-module-importer": "^1.4.0",
     "slick-carousel": "^1.6.0",
-    "webpack": "^1.12.14",
+    "webpack": "^1.12.14"
   },
   "babel": {
     "presets": [
