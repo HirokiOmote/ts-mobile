@@ -19,37 +19,3 @@
     height: 100%;
   }
 }
-
-.top-bnr {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  background-color: #fff;
-  padding: 10px 8px;
-
-  a {
-    transition: opacity .2s;
-
-    &:hover {
-      opacity: .7;
-    }
-  }
-
-  picture {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    right: 10px;
-    bottom: 100px;
-    left: auto;
-    padding: 0;
-    width: auto;
-    background-color: transparent;
-  }
-}
